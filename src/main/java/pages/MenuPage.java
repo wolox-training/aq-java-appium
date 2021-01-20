@@ -1,6 +1,6 @@
 package pages;
 
-import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
 public class MenuPage extends BasePage {
@@ -10,20 +10,19 @@ public class MenuPage extends BasePage {
     }
 
     @AndroidFindBy(xpath = "//*[@content-desc='WebView']")
-    private AndroidElement bottomBarWebView;
+    private MobileElement bottomBarWebView;
 
     @AndroidFindBy(xpath = "//*[@content-desc='Login']")
-    private AndroidElement bottomBarLogin;
+    private MobileElement bottomBarLogin;
 
     @AndroidFindBy(xpath = "//*[@content-desc='Home']")
-    private AndroidElement bottomBarHome;
+    private MobileElement bottomBarHome;
 
     @AndroidFindBy(xpath = "//*[@content-desc='Forms']")
-    private AndroidElement bottomBarForms;
+    private MobileElement bottomBarForms;
 
     @AndroidFindBy(xpath = "//*[@content-desc='Swipe']")
-    private AndroidElement bottomBarSwipe;
-
+    private MobileElement bottomBarSwipe;
 
     public void clicWebViewMenu() {
         bottomBarWebView.click();
@@ -36,15 +35,19 @@ public class MenuPage extends BasePage {
     public boolean isDisplayedHomeMenu(){
         return bottomBarHome.isDisplayed();
     }
+
     public boolean isDisplayedWebViewMenu(){
         return bottomBarWebView.isDisplayed();
     }
+
     public boolean isDisplayedLoginMenu(){
         return bottomBarLogin.isDisplayed();
     }
+
     public boolean isDisplayedFormsMenu(){
         return bottomBarForms.isDisplayed();
     }
+
     public boolean isDisplayedSwipeMenu(){
         return bottomBarSwipe.isDisplayed();
     }

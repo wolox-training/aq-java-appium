@@ -7,10 +7,10 @@ import org.junit.Assert;
 import pages.MenuPage;
 import pages.WebViewPage;
 
-public class steps {
+public class StepsDefinition {
 
-    @Given("^I am here$")
-    public void something() {
+    @Given("^I am in the WebDriverIo app$")
+    public void iAmInTheWebDriverIoApp() {
         MenuPage menuPage = new MenuPage();
         Assert.assertTrue(menuPage.isDisplayedHomeMenu());
         Assert.assertTrue(menuPage.isDisplayedWebViewMenu());

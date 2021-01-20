@@ -1,7 +1,6 @@
 package utils;
 
 import io.appium.java_client.AppiumDriver;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * Class containing the methods to perform explicit waits
  */
 public class Wait {
+
     private AppiumDriver driver;
     private static Wait instance;
 
