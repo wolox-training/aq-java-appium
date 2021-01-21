@@ -32,23 +32,9 @@ public class MenuPage extends BasePage {
         bottomBarLogin.click();
     }
 
-    public boolean isDisplayedHomeMenu(){
-        return bottomBarHome.isDisplayed();
-    }
-
-    public boolean isDisplayedWebViewMenu(){
-        return bottomBarWebView.isDisplayed();
-    }
-
-    public boolean isDisplayedLoginMenu(){
-        return bottomBarLogin.isDisplayed();
-    }
-
-    public boolean isDisplayedFormsMenu(){
-        return bottomBarForms.isDisplayed();
-    }
-
-    public boolean isDisplayedSwipeMenu(){
-        return bottomBarSwipe.isDisplayed();
+    public boolean isDisplayedMenu(){
+        return bottomBarHome.isDisplayed() && bottomBarWebView.isDisplayed()
+                && bottomBarLogin.isDisplayed() && bottomBarForms.isDisplayed()
+                && bottomBarSwipe.isDisplayed();
     }
 }

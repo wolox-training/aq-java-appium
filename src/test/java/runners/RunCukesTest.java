@@ -11,7 +11,7 @@ import utils.BrowserManagement;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumberHtmlReport"},
-        features = "src/test/resources/features/",
+        features = "src/test/resources/features/Sample.feature",
         glue = {"StepsDefinition"}
 )
 class RunCukesTest {

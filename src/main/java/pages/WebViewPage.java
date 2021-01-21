@@ -32,28 +32,9 @@ public class WebViewPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.ListView/android.view.View/android.view.View[@text='Contribute']")
     private MobileElement lnkContribute;
 
-    public boolean isDisplayedLnkDocs (){
+    public boolean isDisplayedLnksWebView() {
         wait.untilElementIsVisible(timeOutSeconds, lnkApi);
-        return lnkDocs.isDisplayed();
-    }
-
-    public boolean isDisplayedLnkApi (){
-        return lnkApi.isDisplayed();
-    }
-
-    public boolean isDisplayedLnkHelp(){
-        return lnkHelp.isDisplayed();
-    }
-
-    public boolean isDisplayedLnkVersions (){
-        return lnkVersions.isDisplayed();
-    }
-
-    public boolean isDisplayedLnkBlog(){
-        return lnkBlog.isDisplayed();
-    }
-
-    public boolean isDisplayedLnkContribute (){
-        return lnkContribute.isDisplayed();
+        return lnkDocs.isDisplayed() && lnkApi.isDisplayed() && lnkHelp.isDisplayed() &&
+                lnkVersions.isDisplayed() && lnkBlog.isDisplayed() && lnkContribute.isDisplayed();
     }
 }

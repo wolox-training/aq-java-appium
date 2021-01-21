@@ -33,6 +33,7 @@ public class BrowserManagement {
 
     /**
      * Method that determines through the BROWSER environment variable the browser to use and its configuration
+     *
      * @return
      */
     public static AppiumDriver<MobileElement> initializeDriver() {
@@ -47,10 +48,9 @@ public class BrowserManagement {
         return driver;
     }
 
-    private static AppiumDriver androidSetup(){
+    private static AppiumDriver androidSetup() {
         DesiredCapabilities capabilities = getCapabilities();
         String serverUrl = dotenv.get("SERVER_URL");
-        System.out.println("--------------------"+serverUrl);
         try {
             driver = new AndroidDriver<MobileElement>(new URL(serverUrl), capabilities);
         } catch (MalformedURLException e) {
@@ -59,8 +59,8 @@ public class BrowserManagement {
         return driver;
     }
 
-    private static DesiredCapabilities getCapabilities(){
-        File app = new File("src/test/resources/apks", dotenv.get("APK_NAME"));
+    private static DesiredCapabilities getCapabilities() {
+        File app = new File(dotenv.get("APK_NAME"));
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 20);
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
@@ -70,12 +70,12 @@ public class BrowserManagement {
         return capabilities;
     }
 
-    public static void startServer(){
+    public static void startServer() {
         server = AppiumDriverLocalService.buildDefaultService();
         server.start();
     }
-    public static void stopServer(){
-        server.stop();
+
+    public static void stopServer() {
         server.stop();
     }
 }
