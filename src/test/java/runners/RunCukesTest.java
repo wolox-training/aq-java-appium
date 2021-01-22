@@ -12,7 +12,7 @@ import utils.BrowserManagement;
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumberHtmlReport"},
         features = "src/test/resources/features/Sample.feature",
-        glue = {"StepsDefinition"}
+        glue = {"steps"}
 )
 class RunCukesTest {
 
