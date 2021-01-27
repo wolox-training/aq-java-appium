@@ -1,25 +1,46 @@
-Feature: Hello World
-  Scenario: Open WebView Menu
-    Given I am in the WebDriverIo app
-    When  I click on the "WebView" menu
-    Then The web view opens
+Feature: Tabbar verification
 
-  Scenario: Open Login Menu
+  Scenario Outline: Open WebView Menu
     Given I am in the WebDriverIo app
-    When  I click on the "Login" menu
-    Then The login opens
+    When  I click on the "<menu>" menu
+    Then The "<menu>" opens
 
-  Scenario: Open Forms Menu
-    Given I am in the WebDriverIo app
-    When  I click on the "Forms" menu
-    Then The forms opens
+    Examples:
+      | menu    |
+      | WebView |
 
-  Scenario: Open Swipe Menu
+  Scenario Outline: Open Login Menu
     Given I am in the WebDriverIo app
-    When  I click on the "Swipe" menu
-    Then The swipe opens
+    When  I click on the "<menu>" menu
+    Then The "<menu>" opens
 
-  Scenario: Open WebView Menu
+    Examples:
+      | menu  |
+      | Login |
+
+  Scenario Outline: Open Forms Menu
     Given I am in the WebDriverIo app
-    When  I click on the "Home" menu
-    Then The Home opens
+    When  I click on the "<menu>" menu
+    Then The "<menu>" opens
+
+    Examples:
+      | menu  |
+      | Forms |
+
+  Scenario Outline: Open Swipe Menu
+    Given I am in the WebDriverIo app
+    When  I click on the "<menu>" menu
+    Then The "<menu>" opens
+
+    Examples:
+      | menu  |
+      | Swipe |
+
+  Scenario Outline: Open WebView Menu
+    Given I am in the WebDriverIo app
+    When  I click on the "<menu>" menu
+    Then The "<menu>" opens
+
+    Examples:
+      | menu |
+      | Home |

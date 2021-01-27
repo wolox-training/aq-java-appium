@@ -23,7 +23,7 @@ public class BasePage {
         androidDriver = BrowserManagement.getDriver();
         wait = Wait.getInstance();
         timeOutSeconds = Integer.parseInt(dotenv.get("TIME_SECONDS"));
-        PageFactory.initElements(new AppiumFieldDecorator(androidDriver, Duration.ofSeconds(10)), this);
+        PageFactory.initElements(new AppiumFieldDecorator(androidDriver, Duration.ofSeconds(timeOutSeconds)), this);
     }
 
 }

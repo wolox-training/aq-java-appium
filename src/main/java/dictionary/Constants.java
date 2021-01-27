@@ -1,8 +1,8 @@
 package dictionary;
 
-public class ConstantApp {
+public class Constants {
 
-    private ConstantApp() {
+    private Constants() {
     }
 
     public static final String HOME_MENU="Home";
