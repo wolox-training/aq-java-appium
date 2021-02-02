@@ -1,12 +1,25 @@
-package pages;
+package pages.components;
 
+import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.github.cdimascio.dotenv.Dotenv;
+import org.openqa.selenium.support.PageFactory;
 
-public class MenuPage extends BasePage {
+import java.time.Duration;
 
-    public MenuPage() {
-        super();
+public class TabBar {
+
+    protected AppiumDriver<MobileElement> appiumDriver;
+    protected int timeOutSeconds;
+    protected Dotenv dotenv;
+
+    public TabBar(AppiumDriver<MobileElement> appiumDriver) {
+        this.appiumDriver = appiumDriver;
+        dotenv = Dotenv.load();
+        timeOutSeconds = Integer.parseInt(dotenv.get("TIME_SECONDS"));
+        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, Duration.ofSeconds(timeOutSeconds)), this);
     }
 
     @AndroidFindBy(xpath = "//*[@content-desc='WebView']")
@@ -24,12 +37,24 @@ public class MenuPage extends BasePage {
     @AndroidFindBy(xpath = "//*[@content-desc='Swipe']")
     private MobileElement bottomBarSwipe;
 
+    public void clicHomeMenu() {
+        bottomBarHome.click();
+    }
+
     public void clicWebViewMenu() {
         bottomBarWebView.click();
     }
 
     public void clicLoginMenu() {
         bottomBarLogin.click();
+    }
+
+    public void clicFormsMenu() {
+        bottomBarForms.click();
+    }
+
+    public void clicSwipeMenu() {
+        bottomBarSwipe.click();
     }
 
     public boolean isDisplayedMenu(){
