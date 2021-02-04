@@ -5,7 +5,6 @@ import io.appium.java_client.MobileElement;
 
 public class SwipeHelp {
 
-
     public static MobileElement androidHorizonalSwipe(String carousel, String option){
         return BrowserManagement.getDriver().findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable("+carousel+").setAsHorizontalList()." +
