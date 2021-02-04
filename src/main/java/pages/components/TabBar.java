@@ -1,26 +1,10 @@
 package pages.components;
 
-import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import io.github.cdimascio.dotenv.Dotenv;
-import org.openqa.selenium.support.PageFactory;
 
-import java.time.Duration;
+public class TabBar extends BaseComponent{
 
-public class TabBar {
-
-    protected AppiumDriver<MobileElement> appiumDriver;
-    protected int timeOutSeconds;
-    protected Dotenv dotenv;
-
-    public TabBar(AppiumDriver<MobileElement> appiumDriver) {
-        this.appiumDriver = appiumDriver;
-        dotenv = Dotenv.load();
-        timeOutSeconds = Integer.parseInt(dotenv.get("TIME_SECONDS"));
-        PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, Duration.ofSeconds(timeOutSeconds)), this);
-    }
 
     @AndroidFindBy(xpath = "//*[@content-desc='WebView']")
     private MobileElement bottomBarWebView;

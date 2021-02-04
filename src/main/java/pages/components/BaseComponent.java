@@ -1,4 +1,4 @@
-package pages;
+package pages.components;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -11,14 +11,14 @@ import utils.Wait;
 import java.time.Duration;
 
 
-public class BasePage {
+public class BaseComponent {
 
     protected AppiumDriver<MobileElement> appiumDriver;
     protected Wait wait;
     protected Dotenv dotenv;
     protected int timeOutSeconds;
 
-    public BasePage() {
+    public BaseComponent() {
         dotenv = Dotenv.load();
         appiumDriver = BrowserManagement.getDriver();
         wait = Wait.getInstance();
@@ -26,18 +26,6 @@ public class BasePage {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver, Duration.ofSeconds(timeOutSeconds)), this);
     }
 
-    /**
-     * This method verifies if a webelement is displayed
-     *
-     * @param element
-     * @return
-     */
-    protected boolean elementIsDisplayed(MobileElement element) {
-        try {
-            return element.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
-    }
+
 
 }
