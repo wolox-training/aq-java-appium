@@ -8,6 +8,6 @@ Feature: Swipe verification
     Then carousel element is clickable
 
     Examples:
-      | menu  | text              |
-      | Swipe | CREAT COMMUNITY   |
-      | Swipe | EXTENDABLE        |
+      | menu  | text            |
+      | Swipe | CREAT COMMUNITY |
+      | Swipe | EXTENDABLE      |

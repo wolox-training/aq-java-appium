@@ -31,7 +31,7 @@ public class SwipePage extends BasePage {
                 break;
             case "Android":
             default:
-                elementCarousel = SwipeHelper.androidHorizonalSwipe(horizontalScrollView, String.format(neededElement_finder,text));
+                elementCarousel = SwipeHelper.androidHorizonalSwipe(horizontalScrollView, String.format(neededElement_finder, text));
         }
     }
 

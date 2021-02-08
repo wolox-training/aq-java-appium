@@ -17,12 +17,12 @@ import utils.BrowserManagement;
 class SwipeTest {
 
     @BeforeClass
-    public static void init(){
+    public static void init() {
         BrowserManagement.startServer();
     }
 
     @AfterClass
-    public static void finish(){
+    public static void finish() {
         BrowserManagement.getDriver().closeApp();
         BrowserManagement.getDriver().quit();
         BrowserManagement.stopServer();

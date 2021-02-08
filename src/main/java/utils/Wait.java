@@ -27,6 +27,7 @@ public class Wait {
 
     /**
      * Method that allows setting a wait according to a given condition and period of time
+     *
      * @param condition
      * @param timeout
      */
@@ -37,6 +38,7 @@ public class Wait {
 
     /**
      * Method that expects a webelement to be visible for a certain time
+     *
      * @param timeout
      * @param element
      */
@@ -47,6 +49,7 @@ public class Wait {
 
     /**
      * This method wait for a page to complete loading
+     *
      * @param timeout
      */
     public void untilPageLoads(int timeout) {
@@ -56,6 +59,7 @@ public class Wait {
 
     /**
      * This method wait until the element is clickable by the locator.
+     *
      * @param timeout
      * @param element
      */
@@ -66,13 +70,14 @@ public class Wait {
 
     /**
      * This method expects the given element to have an attribute with a specific value
+     *
      * @param timeout
      * @param element
      * @param attribute
      * @param value
      */
-    public void waitForAttributeValue(int timeout, WebElement element, String attribute, String value){
-        waitForCondition( wd->element.getAttribute(attribute).equals(value),timeout );
+    public void waitForAttributeValue(int timeout, WebElement element, String attribute, String value) {
+        waitForCondition(wd -> element.getAttribute(attribute).equals(value), timeout);
     }
 
- }
+}

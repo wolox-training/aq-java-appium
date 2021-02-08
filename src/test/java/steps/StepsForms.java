@@ -72,10 +72,10 @@ public class StepsForms {
     @And("The inactive button is disabled")
     public void theInactiveButtonIsDisabled() {
         boolean status;
-        int randomNum = FakerManager.getInstance().getFaker().number().numberBetween(1,2);
-        if( randomNum == 1){
+        int randomNum = FakerManager.getInstance().getFaker().number().numberBetween(1, 2);
+        if (randomNum == 1) {
             status = formsPage.getStatusInactiveButton1();
-        }else {
+        } else {
             status = formsPage.getStatusInactiveButton2();
         }
         Assert.assertFalse(status);

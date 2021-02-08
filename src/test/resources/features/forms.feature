@@ -11,16 +11,16 @@ Feature: Forms verification
     And The inactive button is disabled
 
     Examples:
-      | menu  | optionDD          |
-      | Forms | This app is awesome|
+      | menu  | optionDD            |
+      | Forms | This app is awesome |
 
 
-    Scenario Outline: Validate form alert
-      Given I am in the WebDriverIo app
-      And  I click on the "<menu>" menu
-      When I click the Active button
-      Then The system displays an alarm with the corresponding buttons
+  Scenario Outline: Validate form alert
+    Given I am in the WebDriverIo app
+    And  I click on the "<menu>" menu
+    When I click the Active button
+    Then The system displays an alarm with the corresponding buttons
 
-      Examples:
-        | menu  |
-        | Forms |
+    Examples:
+      | menu  |
+      | Forms |

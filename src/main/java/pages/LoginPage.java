@@ -12,7 +12,7 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(xpath = "//android.widget.ScrollView[@content-desc='Login-screen']/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView")
     private MobileElement titleLogin;
 
-    public String getTitleLoginMenu(){
+    public String getTitleLoginMenu() {
         return titleLogin.getText();
     }
 
