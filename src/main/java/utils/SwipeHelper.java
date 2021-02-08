@@ -41,7 +41,7 @@ public class SwipeHelper {
                 .release().perform();
     }
 
-    public static void scrollNClick(By listItems, String Text) {
+    public static void scrollAndClick(By listItems, String Text) {
         boolean flag = false;
 
         while (true) {
@@ -59,7 +59,7 @@ public class SwipeHelper {
         }
     }
 
-    public static void scrollNClick(WebElement el) {
+    public static void scrollAndClick(WebElement el) {
         int retry = 0;
         while (retry <= 5) {
             try {

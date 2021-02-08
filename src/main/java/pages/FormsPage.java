@@ -80,7 +80,7 @@ public class FormsPage extends BasePage {
     }
 
     public boolean getStatusInactiveButton1() {
-        SwipeHelper.scrollNClick(inactiveButton);
+        SwipeHelper.scrollAndClick(inactiveButton);
         return inactiveButton.isEnabled();
     }
 
