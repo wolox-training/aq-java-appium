@@ -25,7 +25,6 @@ class RunCukesTest {
     public static void finish(){
         BrowserManagement.getDriver().closeApp();
         BrowserManagement.getDriver().quit();
-
         BrowserManagement.stopServer();
     }
 }

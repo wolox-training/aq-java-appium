@@ -25,7 +25,6 @@ class SwipeTest {
     public static void finish(){
         BrowserManagement.getDriver().closeApp();
         BrowserManagement.getDriver().quit();
-
         BrowserManagement.stopServer();
     }
 }

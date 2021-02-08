@@ -3,7 +3,7 @@ package utils;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 
-public class SwipeHelp {
+public class SwipeHelper {
 
     public static MobileElement androidHorizonalSwipe(String carousel, String option){
         return BrowserManagement.getDriver().findElement(MobileBy.AndroidUIAutomator(
