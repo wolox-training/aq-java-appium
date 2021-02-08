@@ -17,3 +17,23 @@ dependencies {
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.9.1'
 }
 ```
+
+## Mobile Swipe
+To perform an horizontal and vertical scroll down to an element we can follow this guide: http://appium.io/docs/en/writing-running-appium/tutorial/swipe/android-layout-direction/
+
+```
+public class SwipeHelp {
+
+    public static MobileElement androidHorizonalSwipe(String carousel, String option){
+        return BrowserManagement.getDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable("+carousel+").setAsHorizontalList()." +
+                "scrollIntoView("+option+")"));
+    }
+
+    public static MobileElement androidVerticalSwipe(String carousel, String option){
+        return BrowserManagement.getDriver().findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable("+carousel+").setAsVerticalList()." +
+                        "scrollIntoView("+option+")"));
+    }
+}
+```

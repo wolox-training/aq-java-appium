@@ -11,10 +11,10 @@ import utils.BrowserManagement;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumberHtmlReport"},
-        features = "src/test/resources/features/Sample.feature",
+        features = "src/test/resources/features/swipe.feature",
         glue = {"steps"}
 )
-class RunCukesTest {
+class SwipeTest {
 
     @BeforeClass
     public static void init(){
