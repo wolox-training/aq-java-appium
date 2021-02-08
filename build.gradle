@@ -19,6 +19,7 @@ dependencies {
     compile group: 'io.appium', name: 'java-client', version: '7.4.1'
     compile 'io.github.cdimascio:dotenv-java:2.2.0'
     testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.9.1'
+
 }
 
 wrapper {

@@ -1,4 +1,5 @@
 # Mobile automation project (Appium-Java)
+
 The project for the automation of mobile devices was created with the following tools
 
 * Java
@@ -7,6 +8,7 @@ The project for the automation of mobile devices was created with the following 
 * Intellij IDE
 
 ## Used dependencies
+
 ```
 dependencies {
     implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.9.1'
@@ -19,7 +21,9 @@ dependencies {
 ```
 
 ## Mobile Swipe
-To perform an horizontal and vertical scroll down to an element we can follow this guide: http://appium.io/docs/en/writing-running-appium/tutorial/swipe/android-layout-direction/
+
+To perform an horizontal and vertical scroll down to an element we can follow this
+guide: http://appium.io/docs/en/writing-running-appium/tutorial/swipe/android-layout-direction/
 
 ```
 public class SwipeHelp {

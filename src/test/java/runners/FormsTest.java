@@ -8,9 +8,10 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty", "html:target/cucumberHtmlReport"},
-        features = "src/test/resources/features/swipe.feature",
+        features = "src/test/resources/features/forms.feature",
         glue = {"steps"}
 )
-class SwipeTest extends AbstractTest{
+class FormsTest extends AbstractTest{
+
 
 }

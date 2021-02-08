@@ -64,10 +64,10 @@ public class BrowserManagement {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 20);
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-        String [] capabilitiesFile = dotenv.get("CAPABILITY").split(";");
-       for (int i=0; i<capabilitiesFile.length;i+=2){
-           capabilities.setCapability(capabilitiesFile[i],capabilitiesFile[i+1]);
-       }
+        String[] capabilitiesFile = dotenv.get("CAPABILITY").split(";");
+        for (int i = 0; i < capabilitiesFile.length; i += 2) {
+            capabilities.setCapability(capabilitiesFile[i], capabilitiesFile[i + 1]);
+        }
         return capabilities;
     }
 
