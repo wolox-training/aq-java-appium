@@ -19,7 +19,7 @@ dependencies {
 ```
 
 ## Mobile Swipe
-To perform the action horizontal and vertical scroll down to an element we can guide the : http://appium.io/docs/en/writing-running-appium/tutorial/swipe/android-layout-direction/
+To perform an horizontal and vertical scroll down to an element we can follow this guide: http://appium.io/docs/en/writing-running-appium/tutorial/swipe/android-layout-direction/
 
 ```
 public class SwipeHelp {

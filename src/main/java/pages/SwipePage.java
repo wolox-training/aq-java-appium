@@ -2,7 +2,7 @@ package pages;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import utils.SwipeHelp;
+import utils.SwipeHelper;
 
 public class SwipePage extends BasePage {
 
@@ -31,7 +31,7 @@ public class SwipePage extends BasePage {
                 break;
             case "Android":
             default:
-                elementCarousel = SwipeHelp.androidHorizonalSwipe(horizontalScrollView, String.format(neededElement_finder,text));
+                elementCarousel = SwipeHelper.androidHorizonalSwipe(horizontalScrollView, String.format(neededElement_finder,text));
         }
     }
 
