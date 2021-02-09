@@ -2,7 +2,7 @@ package pages;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
-import utils.SwipeHelp;
+import utils.SwipeHelper;
 
 public class LoginPage extends BasePage {
 
@@ -34,9 +34,37 @@ public class LoginPage extends BasePage {
     @AndroidFindBy(id = "android:id/button1")
     private MobileElement okAlertButton;
 
-
     public String getTitleLoginMenu() {
         return titleLogin.getText();
+    }
+
+
+    public void writeCredentials(String email, String pass) {
+        inputEmail.sendKeys(email);
+        inputPassword.sendKeys(pass);
+    }
+
+    public void clickLoginButton() {
+        if (!elementIsDisplayed(inputButtonLogin)) {
+            SwipeHelper.scrollAndClick(inputButtonLogin);
+        }
+        inputButtonLogin.click();
+    }
+
+    public String msgErrorEmail() {
+        return errorInputEmail.getText();
+    }
+
+    public String msgErrorPassword() {
+        return errorInputPassword.getText();
+    }
+
+    public String msgSuccessLogin() {
+        return alertMessage.getText();
+    }
+
+    public void clickOkButtonAlert(){
+        okAlertButton.click();
     }
 
 }
