@@ -90,6 +90,7 @@ public class StepsForms {
     public void theSystemDisplaysAnAlarmWithTheCorrespondingButtons() {
         Assert.assertTrue(BUTTONS_ACTIVE_ALERT.containsAll(formsPage.getOptionsAlert()));
     }
+
 }
 
 
