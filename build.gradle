@@ -4,6 +4,8 @@ plugins {
 }
 
 sourceCompatibility = 1.8
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 group 'com.test'
 version '1.0-SNAPSHOT'
@@ -28,5 +30,14 @@ wrapper {
 }
 
 test {
-    useJUnitPlatform()
+    //useJUnitPlatform()
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+//    useJUnit()
+//    include('**/LoginTest*')
+//    include('**/SwipeTest*')
+    maxParallelForks = 1
+
+//    testLogging {
+//        exceptionFormat = 'full'
+//    }
 }

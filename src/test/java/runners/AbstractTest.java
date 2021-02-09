@@ -13,8 +13,6 @@ public abstract class AbstractTest {
 
     @AfterClass
     public static void finish() {
-        BrowserManagement.getDriver().closeApp();
-        BrowserManagement.getDriver().quit();
         BrowserManagement.stopServer();
     }
 }
