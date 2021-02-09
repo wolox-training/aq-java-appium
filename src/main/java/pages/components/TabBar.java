@@ -3,7 +3,7 @@ package pages.components;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 
-public class TabBar extends BaseComponent{
+public class TabBar extends BaseComponent {
 
 
     @AndroidFindBy(xpath = "//*[@content-desc='WebView']")
@@ -41,7 +41,7 @@ public class TabBar extends BaseComponent{
         bottomBarSwipe.click();
     }
 
-    public boolean isDisplayedMenu(){
+    public boolean isDisplayedMenu() {
         return bottomBarHome.isDisplayed() && bottomBarWebView.isDisplayed()
                 && bottomBarLogin.isDisplayed() && bottomBarForms.isDisplayed()
                 && bottomBarSwipe.isDisplayed();

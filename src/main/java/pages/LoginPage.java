@@ -39,31 +39,4 @@ public class LoginPage extends BasePage {
         return titleLogin.getText();
     }
 
-    public void writeCredentials(String email, String pass) {
-        inputEmail.sendKeys(email);
-        inputPassword.sendKeys(pass);
-    }
-
-    public void clickLoginButton() {
-        if (!elementIsDisplayed(inputButtonLogin)) {
-            SwipeHelp.scrollNClick(inputButtonLogin);
-        }
-        inputButtonLogin.click();
-    }
-
-    public String msgErrorEmail() {
-        return errorInputEmail.getText();
-    }
-
-    public String msgErrorPassword() {
-        return errorInputPassword.getText();
-    }
-
-    public String msgSuccessLogin() {
-        return alertMessage.getText();
-    }
-
-    public void clickOkButtonAlert(){
-        okAlertButton.click();
-    }
 }

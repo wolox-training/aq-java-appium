@@ -12,24 +12,24 @@ import org.openqa.selenium.WebElement;
 
 import java.time.Duration;
 
-public class SwipeHelp {
+public class SwipeHelper {
 
-    public static MobileElement androidHorizonalSwipe(String carousel, String option){
+    public static MobileElement androidHorizonalSwipe(String carousel, String option) {
         return BrowserManagement.getDriver().findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable("+carousel+").setAsHorizontalList()." +
-                "scrollIntoView("+option+")"));
+                "new UiScrollable(" + carousel + ").setAsHorizontalList()." +
+                        "scrollIntoView(" + option + ")"));
     }
 
-    public static MobileElement androidVerticalSwipe(String carousel, String option){
+    public static MobileElement androidVerticalSwipe(String carousel, String option) {
         return BrowserManagement.getDriver().findElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable("+carousel+").setAsVerticalList()." +
-                        "scrollIntoView("+option+")"));
+                "new UiScrollable(" + carousel + ").setAsVerticalList()." +
+                        "scrollIntoView(" + option + ")"));
     }
 
     /**
      * Método de https://github.com/sunilpatro1985/AppiumTest_Java_And_iOS/blob/master/src/main/java/base/Util.java
      */
-    public static void scrollDown(){
+    public static void scrollDown() {
         Dimension dimension = BrowserManagement.getDriver().manage().window().getSize();
         int scrollStart = (int) (dimension.getHeight() * 0.5);
         int scrollEnd = (int) (dimension.getHeight() * 0.2);
@@ -41,31 +41,31 @@ public class SwipeHelp {
                 .release().perform();
     }
 
-    public static void scrollNClick(By listItems, String Text){
+    public static void scrollAndClick(By listItems, String Text) {
         boolean flag = false;
 
-        while(true){
-            for(WebElement el: BrowserManagement.getDriver().findElements(listItems)){
-                if(el.getAttribute("text").equals(Text)){
+        while (true) {
+            for (WebElement el : BrowserManagement.getDriver().findElements(listItems)) {
+                if (el.getAttribute("text").equals(Text)) {
                     el.click();
-                    flag=true;
+                    flag = true;
                     break;
                 }
             }
-            if(flag)
+            if (flag)
                 break;
             else
                 scrollDown();
         }
     }
 
-    public static void scrollNClick(WebElement el){
+    public static void scrollAndClick(WebElement el) {
         int retry = 0;
-        while(retry <= 5){
-            try{
+        while (retry <= 5) {
+            try {
                 el.click();
                 break;
-            }catch (org.openqa.selenium.NoSuchElementException e){
+            } catch (org.openqa.selenium.NoSuchElementException e) {
                 scrollDown();
                 retry++;
             }
