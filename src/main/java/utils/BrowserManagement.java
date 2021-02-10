@@ -26,7 +26,7 @@ public class BrowserManagement {
 
     public static AppiumDriver<MobileElement> getDriver() {
         if (driver.get() == null) {
-            driver.set( initializeDriver() );
+            driver.set(initializeDriver());
         }
         return driver.get();
     }

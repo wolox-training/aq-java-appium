@@ -9,7 +9,7 @@ Feature: Login verification
 
 
     Examples:
-      | menu  | email    | password | msg   |
-      | Login |          |          | error |
-      | Login | invalido | 1234567  | error |
+      | menu  | email         | password | msg     |
+      | Login |               |          | error   |
+      | Login | invalido      | 1234567  | error   |
       | Login | ana@gmail.com | 12345678 | success |

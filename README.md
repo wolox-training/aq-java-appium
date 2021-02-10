@@ -41,3 +41,26 @@ public class SwipeHelp {
     }
 }
 ```
+
+## RECOMMENDATIONS
+
+It is recommended to work with JUnit4, because the @RunWith annotation of the test runners is typical of JUnit 4, for
+use with JUnit 5 and allure it is required to use the engine-vintage, but when doing so JUnit is not able to recognize
+the tests de cucumber, in addition to generating some unexpected behaviors and errors, which makes the project unstable.
+
+## RUN CODE
+
+By console you can execute the following line, in regressionType replace it with: @Login or @Forms or @Swipe or @Menus
+or @All
+
+``
+./gradlew test --info -DregressionType="regressionType"
+``
+
+For example:
+
+``
+./gradlew test --info -DregressionType="@Login"
+``
+
+
