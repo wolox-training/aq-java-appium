@@ -3,6 +3,7 @@ package utils;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.github.cdimascio.dotenv.Dotenv;
@@ -38,23 +39,22 @@ public class BrowserManagement {
      */
     private static AppiumDriver<MobileElement> initializeDriver() {
         AppiumDriver<MobileElement> driver = null;
-        switch (dotenv.get("PLATFORM_NAME")) {
-            case "Android":
-                driver = androidSetup();
-                break;
-            case "iOS":
-            default:
-                break;
-        }
-        return driver;
-    }
 
-    private static AppiumDriver<MobileElement> androidSetup() {
-        AppiumDriver<MobileElement> driver = null;
         DesiredCapabilities capabilities = getCapabilities();
         String serverUrl = dotenv.get("SERVER_URL");
+
         try {
-            driver = new AndroidDriver<MobileElement>(new URL(serverUrl), capabilities);
+            switch (dotenv.get("PLATFORM_NAME")) {
+                case "Android":
+                    //driver = androidSetup();
+
+                    driver = new AndroidDriver<MobileElement>(new URL(serverUrl), capabilities);
+                    break;
+                case "iOS":
+                default:
+                    driver = new IOSDriver<MobileElement>(new URL(serverUrl), capabilities);
+                    break;
+            }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
@@ -62,11 +62,18 @@ public class BrowserManagement {
     }
 
     private static DesiredCapabilities getCapabilities() {
-        File app = new File(dotenv.get("APK_NAME"));
+        File app;
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 20);
+        String[] capabilitiesFile;
+        if (dotenv.get("PLATFORM_NAME").equals("Android")) {
+            app = new File(dotenv.get("APK_NAME"));
+            capabilitiesFile = dotenv.get("CAPABILITY").split(";");
+        } else {
+            app = new File(dotenv.get("APK_NAME_IOS"));
+            capabilitiesFile = dotenv.get("CAPABILITY_IOS").split(";");
+        }
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-        String[] capabilitiesFile = dotenv.get("CAPABILITY").split(";");
         for (int i = 0; i < capabilitiesFile.length; i += 2) {
             capabilities.setCapability(capabilitiesFile[i], capabilitiesFile[i + 1]);
         }
