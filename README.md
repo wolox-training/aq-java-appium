@@ -11,12 +11,14 @@ The project for the automation of mobile devices was created with the following 
 
 ```
 dependencies {
-    implementation group: 'io.cucumber', name: 'cucumber-java', version: '6.9.1'
-    implementation 'com.github.javafaker:javafaker:1.0.2'
-    compile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
-    compile group: 'io.appium', name: 'java-client', version: '7.4.1'
-    compile 'io.github.cdimascio:dotenv-java:2.2.0'
-    testCompile group: 'io.cucumber', name: 'cucumber-junit', version: '6.9.1'
+    implementation('com.github.javafaker:javafaker:1.0.2')
+    implementation('io.github.cdimascio:dotenv-java:2.2.0')
+    implementation(group: 'io.cucumber', name: 'cucumber-java', version: '6.9.1')
+    implementation group: 'junit', name: 'junit', version: '4.13.1'
+    implementation(group: 'io.appium', name: 'java-client', version: '7.4.1')
+    implementation(group: 'io.cucumber', name: 'cucumber-junit', version: '6.9.1')
+    implementation(group: 'io.qameta.allure', name: 'allure-cucumber6-jvm', version: '2.13.8')
+    implementation(group: 'io.qameta.allure', name: 'allure-junit4', version: '2.13.8')
 }
 ```
 
