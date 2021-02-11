@@ -63,7 +63,7 @@ public class LoginPage extends BasePage {
         return alertMessage.getText();
     }
 
-    public void clickOkButtonAlert(){
+    public void clickOkButtonAlert() {
         okAlertButton.click();
     }
 

@@ -17,7 +17,7 @@ import java.net.URL;
  */
 public class BrowserManagement {
 
-    protected static AppiumDriver<MobileElement> driver;
+    protected static ThreadLocal<AppiumDriver<MobileElement>> driver = new ThreadLocal<>();
     private static Dotenv dotenv = Dotenv.load();
     private static AppiumDriverLocalService server;
 
@@ -25,10 +25,10 @@ public class BrowserManagement {
     }
 
     public static AppiumDriver<MobileElement> getDriver() {
-        if (driver == null) {
-            driver = initializeDriver();
+        if (driver.get() == null) {
+            driver.set(initializeDriver());
         }
-        return driver;
+        return driver.get();
     }
 
     /**
@@ -36,7 +36,8 @@ public class BrowserManagement {
      *
      * @return
      */
-    public static AppiumDriver<MobileElement> initializeDriver() {
+    private static AppiumDriver<MobileElement> initializeDriver() {
+        AppiumDriver<MobileElement> driver = null;
         switch (dotenv.get("PLATFORM_NAME")) {
             case "Android":
                 driver = androidSetup();
@@ -48,7 +49,8 @@ public class BrowserManagement {
         return driver;
     }
 
-    private static AppiumDriver androidSetup() {
+    private static AppiumDriver<MobileElement> androidSetup() {
+        AppiumDriver<MobileElement> driver = null;
         DesiredCapabilities capabilities = getCapabilities();
         String serverUrl = dotenv.get("SERVER_URL");
         try {
@@ -77,6 +79,9 @@ public class BrowserManagement {
     }
 
     public static void stopServer() {
+        getDriver().closeApp();
+        getDriver().quit();
         server.stop();
+        driver.remove();
     }
 }

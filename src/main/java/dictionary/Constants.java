@@ -19,9 +19,9 @@ public class Constants {
     public static final String TITLE_SWIPE_MENU = "Swipe horizontal";
     public static final List<String> BUTTONS_ACTIVE_ALERT = Collections.unmodifiableList(Arrays.asList("ASK ME LATER", "CANCEL", "OK"));
 
-    public static final String ERROR_INPUT_EMAIL="Please enter a valid email address";
-    public static final String ERROR_INPUT_PASSWORD="Please enter at least 8 characters";
-    public static final String SUCCESS_INPUT_PASSWORD="You are logged in!";
+    public static final String ERROR_INPUT_EMAIL = "Please enter a valid email address";
+    public static final String ERROR_INPUT_PASSWORD = "Please enter at least 8 characters";
+    public static final String SUCCESS_INPUT_PASSWORD = "You are logged in!";
 
 
 }

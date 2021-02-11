@@ -14,7 +14,7 @@ public class StepsLogin {
 
     @When("I write the {string} and {string}")
     public void iWriteTheAnd(String email, String pass) {
-        loginPage.writeCredentials(email,pass);
+        loginPage.writeCredentials(email, pass);
     }
 
     @And("I click the login button")
@@ -25,10 +25,10 @@ public class StepsLogin {
 
     @Then("the system displays the {string} message")
     public void theSystemDisplaysTheMessage(String msg) {
-        if (msg.equals("error")){
+        if (msg.equals("error")) {
             Assert.assertTrue(ERROR_INPUT_EMAIL.equals(loginPage.msgErrorEmail()));
             Assert.assertTrue(ERROR_INPUT_PASSWORD.equals(loginPage.msgErrorPassword()));
-        }else {
+        } else {
             Assert.assertTrue(SUCCESS_INPUT_PASSWORD.equals(loginPage.msgSuccessLogin()));
             loginPage.clickOkButtonAlert();
         }
