@@ -2,6 +2,7 @@ package pages;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class HomePage extends BasePage {
 
@@ -9,6 +10,7 @@ public class HomePage extends BasePage {
         super();
     }
 
+    @iOSXCUITFindBy(accessibility = "assets/js/assets/webdriverio.png")
     @AndroidFindBy(className = "android.widget.ImageView")
     private MobileElement imgView;
 
@@ -20,7 +22,8 @@ public class HomePage extends BasePage {
 
 
     public boolean isDisplayedImgsHome() {
-        wait.untilElementIsVisible(timeOutSeconds, imgView);
-        return imgIconiOS.isDisplayed() && imgIconAndroid.isDisplayed();
+        return imgView.isDisplayed();
+//        wait.untilElementIsVisible(timeOutSeconds, imgView);
+//        return imgIconiOS.isDisplayed() && imgIconAndroid.isDisplayed();
     }
 }

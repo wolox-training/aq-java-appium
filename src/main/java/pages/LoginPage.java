@@ -11,6 +11,7 @@ public class LoginPage extends BasePage {
         super();
     }
 
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@name=\"Login / Sign up Form\"]")
     @AndroidFindBy(xpath = "//android.widget.ScrollView[@content-desc='Login-screen']/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.TextView")
     private MobileElement titleLogin;
 
@@ -45,7 +46,7 @@ public class LoginPage extends BasePage {
     public String getTitleLoginMenu() {
         return titleLogin.getText();
     }
-    
+
     public void writeCredentials(String email, String pass) {
         inputEmail.sendKeys(email);
         inputPassword.sendKeys(pass);

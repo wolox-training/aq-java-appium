@@ -11,6 +11,6 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/Sample.feature",
         glue = {"steps"}
 )
-class RunCukesTest extends AbstractTest {
+class RunMenusTest extends AbstractTest {
 
 }

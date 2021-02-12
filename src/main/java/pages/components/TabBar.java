@@ -6,7 +6,6 @@ import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 
 public class TabBar extends BaseComponent {
 
-
     @iOSXCUITFindBy(accessibility = "WebView")
     @AndroidFindBy(xpath = "//*[@content-desc='WebView']")
     private MobileElement bottomBarWebView;

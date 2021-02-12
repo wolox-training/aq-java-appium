@@ -65,4 +65,7 @@ For example:
 ./gradlew test --info -DregressionType="@Login"
 ``
 
-
+# LAUNCH ALLURE REPORT LOCALLY
+``
+./gradlew allureServe
+``
