@@ -1,6 +1,6 @@
 Feature: Tabbar verification
 
-  Scenario Outline: Open WebView Menu
+  Scenario Outline: Open "<menu>" Menu
     Given I am in the WebDriverIo app
     When  I click on the "<menu>" menu
     Then The "<menu>" opens
@@ -8,39 +8,7 @@ Feature: Tabbar verification
     Examples:
       | menu    |
       | WebView |
-
-  Scenario Outline: Open Login Menu
-    Given I am in the WebDriverIo app
-    When  I click on the "<menu>" menu
-    Then The "<menu>" opens
-
-    Examples:
-      | menu  |
-      | Login |
-
-  Scenario Outline: Open Forms Menu
-    Given I am in the WebDriverIo app
-    When  I click on the "<menu>" menu
-    Then The "<menu>" opens
-
-    Examples:
-      | menu  |
-      | Forms |
-
-  Scenario Outline: Open Swipe Menu
-    Given I am in the WebDriverIo app
-    When  I click on the "<menu>" menu
-    Then The "<menu>" opens
-
-    Examples:
-      | menu  |
-      | Swipe |
-
-  Scenario Outline: Open WebView Menu
-    Given I am in the WebDriverIo app
-    When  I click on the "<menu>" menu
-    Then The "<menu>" opens
-
-    Examples:
-      | menu |
-      | Home |
+      | Login   |
+      | Forms   |
+      | Swipe   |
+      | Home    |
